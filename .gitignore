@@ -1,0 +1,7 @@
+.idea
+.autoenv.zsh
+node_modules
+packages_No_Name.*
+erd_from_sqlite.*
+.ropeproject
+__pycache__

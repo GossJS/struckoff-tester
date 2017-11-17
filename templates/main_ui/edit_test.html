@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "main_ui/connections.html" %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_test.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit room #{{ room_id }}</title>
+</head>
+<body>
+<div class=" row">
+    <div class="col-xs-12 col-sm-2 col-lg-2 btn">
+        <button type="button" class="btn btn-info btn-block btn-"
+                onClick="parent.location='/'">
+            Main page
+        </button>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-lg-4 row col-centered">
+        <form class="btn btn-group" action=" " method="post">
+            <button type="button" class="btn btn-success"
+                    onClick="parent.location='/room/{{ room_id }}'">
+                Test room
+            </button>
+            <button type="button" class="btn btn-success"
+                    onClick="parent.location= '/edit/{{ room_id }}/reports'">
+                Reports
+            </button>
+            <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+        </form>
+    </div>
+</div>
+<div id="main_container" class="col-md-12"></div>
+</body>
+<script src="{{ url_for('static', filename='js/raw/edit_test.js') }}"></script>
+
+</html>

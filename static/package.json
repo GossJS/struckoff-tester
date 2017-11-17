@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "browserify": "latest",
+    "watchify": "latest"
+  },
+  "scripts": {
+    "build-js": "browserify -t reactify js/src/create_test.js > js/raw/create_test.js",
+    "watch-create_test": "watchify -t reactify js/src/create_test.js -o js/raw/create_test.js",
+    "watch-edit_test": "watchify -t reactify js/src/edit_test.js -o js/raw/edit_test.js",
+    "watch-modules": "watchify -t reactify js/src/modules.js -o js/raw/modules.js",
+    "watch-test": "watchify -t reactify js/src/test_room.js -o js/raw/test_room.js",
+    "watch-reports": "watchify -t reactify js/src/reports.js -o js/raw/reports.js",
+    "refresh-create_test": "refreshify -t reactify js/src/create_test.js -o js/raw/create_test.js",
+    "refresh-edit_test": "refreshify -t reactify js/src/edit_test.js -o js/raw/edit_test.js",
+    "refresh-modules": "refreshify -t reactify js/src/modules.js -o js/raw/modules.js",
+    "refresh-test": "refreshify -t reactify js/src/test_room.js -o js/raw/test_room.js"
+  },
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "npm-run-all": "^2.1.1",
+    "react-addons-css-transition-group": "^15.1.0",
+    "react-codemirror": "^0.2.6",
+    "react-modal": "^1.3.0",
+    "sha256": "^0.2.0"
+  }
+}

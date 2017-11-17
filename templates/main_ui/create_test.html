@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "main_ui/connections.html" %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_test.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Create room</title>
+</head>
+<body>
+<div class=" row">
+    <div class="col-xs-12 col-lg-2 btn">
+        <button type="button" class="btn btn-info btn-block btn-"
+                onClick="parent.location='/'">
+            Main page
+        </button>
+    </div>
+</div>
+<div id="main_container" class="col-md-12"></div>
+</body>
+<script src="{{ url_for('static', filename='js/raw/create_test.js') }}"></script>
+
+</html>

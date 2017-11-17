@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "main_ui/connections.html" %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+
+<script>
+    function go_to_room(e) {
+        var room_number = document.getElementById('room_number');
+        var room_input_group = document.getElementById('room_input');
+        var xhr = new XMLHttpRequest();
+        xhr.open("HEAD", '/room/' + room_number.value, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 404) {
+                room_input_group.classList.add("has-error");
+            }
+            else {
+                parent.location = '/room/' + room_number.value;
+            }
+        };
+        xhr.send(null);
+
+    }
+</script>
+
+<body class="jumbotron ">
+<div class="main_cont jumbotron">
+    <button
+            class="btn btn-info btn-lg"
+            id="create_button"
+            onClick="parent.location='/create'">
+        Create test room
+    </button>
+    <h3 class="text-primary">--- OR ---</h3>
+    <div class="input-group text-primary" id="room_input">
+        <span class="text-primary input-group-addon ">/ROOM/</span>
+        <input type="text" id="room_number" class="form-control "/>
+    <span class="input-group-btn">
+      <button class="btn" type="button" onclick="go_to_room(this)">GO</button>
+    </span>
+    </div>
+</div>
+</body>
+<style>
+    .main_cont {
+        text-align: center;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%)
+    }
+</style>
+
+
+</html>
